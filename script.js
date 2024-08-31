@@ -120,14 +120,15 @@ function search() {
   }
 }
 
-/*if (localStorage.getItem("shortcuts") == null) {
-localStorage.setItem("shortcuts", {});
+function changeBackground(override) {
+  let url;
+  if (override) {url = override} else {url = prompt("What is the image url?"); localStorage.setItem("bkg", url);}
+  document.body.style.backgroundImage = "url(" + url + ")";
+  document.body.style.backgroundSize = "cover";
 }
-function updateShortcuts() {
-  var numberOfChildren = shortcuts.getElementsByTagName('*').length;
-  ShortcutsList = [];
-  for (var i = 0; i < numberOfChildren; i++) {
-    const thing = document.getElementById("short"+i);
-  };
-print(ShortcutsList)
-}*/
+
+bkgLocal = localStorage.getItem("bkg")
+
+if(bkgLocal) {
+  changeBackground(bkgLocal)
+}
