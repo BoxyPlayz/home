@@ -3,32 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AnyBrowse - Browse Anywhere</title>
+  <title>Home</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>AnyBrowse</h1>
+  <h1>The Box</h1>
 
-  <div class="bar">
-    <input type="text" id="searchInput" placeholder="Search...">
-    <button onclick="goToURL()">Go To URL</button>
-    <input title="Use HTTP" type="checkbox" name="Use HTTP" id="usehttp">
-    <p>Use HTTP</p>
-  </div>
-  <div class="search-button">
-    <!-- Search Buttons -->
-    <button onclick="searchGoogle()">Search With Google</button>
-    <button onclick="searchBing()">Search with Bing</button>
-    <button onclick="searchYahoo()">Search with Yahoo</button>
-    <button onclick="searchWiki()">Search With Wikipedia</button><br>
-    <button onclick="searchScholar()">Search With Google Scholar</button>
-    <button onclick="searchSpace()">Search With space.com</button>
-    <button onclick="searchNASA()">Search With NASA</button>
+  <div id="bar">
+    <a href="javascript:search()"><svg 
+    id="searchICO"
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+    >
+      <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+    </svg></a>
+    <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
+    <!-- <button onclick="goToURL()">Go To URL</button> -->
+    <select name="Engine" id="SearchEngine">
+      <optgroup label="Normal Sites">
+        <option value="google" selected>Google</option>
+        <option value="yahoo">Yahoo</option>
+        <option value="bing">Bing</option>
+        <option value="duck">DuckDuckGo</option>
+        <option value="wiki">Wikipedia</option>
+      </optgroup>
+      <optgroup label="Direct">
+        <option value="http">HTTP</option>
+      </optgroup>
+    </select>
   </div>
 
-<div id="shortcuts">
+
+<!--
+  <div id="shortcuts">
   <button onclick="newShortcut()" type="button">+</button>
 </div>
+</div>
+-->
+<div id="discord">
+  <img style="width: 10vh;" 
+  src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png">
+  <p>Join our discord <a href="../discord/">here</a></p>
 </div>
   <script src="script.js"></script>
 </body>

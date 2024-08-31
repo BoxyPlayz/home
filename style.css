@@ -1,27 +1,90 @@
-body{
-      background-color:rgb(8, 0, 255)
-    }
+body {
+  background-color: rgb(8, 0, 255);
+}
 
-    h1{
-      font-size: 300%;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-    }
+h1 {
+  font-size: 300%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 
 .search-button {
   padding: 300%, 200%;
   align-items: center;
 }
 
-.bar {
+#bar {
   display: flex;
   align-items: center;
-  justify-content: center;
   margin-bottom: 10px;
+  border: 0.5vh solid black;
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  border-radius: 1vh;
+}
+
+#bar:focus {
+  border: none;
+  outline: none;
+}
+
+textarea:focus,
+input:focus,
+input,
+textarea {
+  outline: none;
+  width: 80vw;
 }
 
 .top {
   background-color: cadetblue;
   border-width: 150%;
+}
+
+.searchInput {
+  border: none !important;
+  outline: none !important;
+  border-width: 0;
+  width: auto;
+  position: absolute;
+}
+
+.searchICO {
+  font-size: small;
+  background-color: white;
+  border: 0;
+  outline: 0;
+}
+
+svg {
+  height: 5vh;
+  width: 5vh;
+  align-self: flex-start !important;
+}
+
+.SearchEngine {
+  width: 5vh;
+  line-height: 2vh;
+  font-size: large;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+  border: 0;
+  border-width: 0;
+}
+
+#discord {
+  min-width: 5vw;
+  margin-left: 90vw;
+  min-height: 7vh;
+  margin-top: 50vh;
+  background-color: rgb(60, 60, 60);
+  border: 1vh solid black;
+  border-radius: 1vh;
+  img {
+    padding: 0;
+    margin: 0;
+  }
 }
