@@ -1,8 +1,7 @@
 const searchInput = document.getElementById("searchInput");
 const searchMenu = document.getElementById("SearchEngine");
 const shortcuts = document.getElementById("shortcuts");
-
-var ShortcutsList = [];
+const timeElement = document.getElementById("time");
 
 searchInput.addEventListener("contextmenu", function (event) {
   event.preventDefault();
@@ -18,6 +17,19 @@ function searchGoogle() {
     "_blank"
   );
 }
+
+function setTime() {
+  const date = new Date();
+  const offset = date.getTimezoneOffset()/60
+  let hours = date.getUTCHours() - offset
+  if (hours < 1) {hours += 24}
+  const Time = `${hours}:${date.getUTCMinutes()}:${date.getUTCSeconds()}`;
+  timeElement.innerHTML = Time;
+  setTimeout(setTime, 400);
+}
+
+setTime()
+console.log(new Date)
 
 function searchScholar() {
   const query = searchInput.value;
@@ -122,13 +134,18 @@ function search() {
 
 function changeBackground(override) {
   let url;
-  if (override) {url = override} else {url = prompt("What is the image url?"); localStorage.setItem("bkg", url);}
+  if (override) {
+    url = override;
+  } else {
+    url = prompt("What is the image url?");
+    localStorage.setItem("bkg", url);
+  }
   document.body.style.backgroundImage = "url(" + url + ")";
   document.body.style.backgroundSize = "cover";
 }
 
-bkgLocal = localStorage.getItem("bkg")
+bkgLocal = localStorage.getItem("bkg");
 
-if(bkgLocal) {
-  changeBackground(bkgLocal)
+if (bkgLocal) {
+  changeBackground(bkgLocal);
 }
